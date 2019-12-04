@@ -14,11 +14,11 @@
         <RelativeLayout
             android:id="@+id/layout_btn_group_month"
             android:layout_width="match_parent"
+            android:layout_centerVertical="true"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/btn_prev_month"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -42,7 +42,8 @@
         <RelativeLayout
             android:id="@+id/layout_btn_group_week"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
 
             <ImageView
                 android:id="@+id/btn_prev_week"
@@ -65,6 +66,7 @@
                 android:src="@drawable/right_icon" />
 
         </RelativeLayout>
+
     <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -81,10 +83,17 @@
             android:textSize="16sp"
             android:text="Jun 2015" />
 
+        <ImageView
+            android:id="@+id/updownicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/down_icon"/>
+
         <com.shrikanthravi.collapsiblecalendarview.view.ExpandIconView
-            android:layout_width="30dp"
+            android:layout_width="0dp"
             android:layout_gravity="center"
-            android:visibility="visible"
+            android:visibility="gone"
             app:eiv_animationDuration="300"
             app:eiv_color="#000"
             app:eiv_colorLess="@android:color/black"
@@ -94,8 +103,10 @@
             app:eiv_switchColor="true"
             android:id="@+id/expandIcon"
             android:layout_marginStart="10dp"
-            android:layout_height="30dp"/>
+            android:layout_height="0dp"/>
+
 </LinearLayout>
+
     </RelativeLayout>
 
     <TableLayout

@@ -101,8 +101,20 @@ public class CollapsibleCalendar extends UICalendar {
 
         expandIconView.setState(ExpandIconView.MORE,true);
 
-
-        expandIconView.setOnClickListener(new View.OnClickListener() {
+        mBtnExpandMonth.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(expanded){
+                    mBtnExpandMonth.setImageResource(R.drawable.down_icon);
+                    collapse(400);
+                }
+                else{
+                    mBtnExpandMonth.setImageResource(R.drawable.up_icon);
+                    expand(400);
+                }
+            }
+        });
+        /*expandIconView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(expanded){
@@ -112,7 +124,7 @@ public class CollapsibleCalendar extends UICalendar {
                     expand(400);
                 }
             }
-        });
+        });*/
 
         this.post(new Runnable() {
             @Override
