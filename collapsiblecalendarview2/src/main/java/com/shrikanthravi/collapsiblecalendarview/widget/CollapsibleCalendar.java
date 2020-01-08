@@ -178,13 +178,13 @@ public class CollapsibleCalendar extends UICalendar {
 
                 // set today's item
                 if (isToady(day)) {
-                    txtDay.setBackgroundDrawable(getTodayItemBackgroundDrawable());
+                    txtDay.setBackground(getTodayItemBackgroundDrawable());
                     txtDay.setTextColor(getTodayItemTextColor());
                 }
 
                 // set the selected item
                 if (isSelectedDay(day)) {
-                    txtDay.setBackgroundDrawable(getSelectedItemBackgroundDrawable());
+                    txtDay.setBackground(getSelectedItemBackgroundDrawable());
                     txtDay.setTextColor(getSelectedItemTextColor());
                 }
             }
@@ -463,6 +463,9 @@ public class CollapsibleCalendar extends UICalendar {
                 tempHeight += mTableBody.getChildAt(i).getMeasuredHeight();
             }
             final int topHeight = tempHeight;
+            if(mListener != null){
+                mListener.getCalendarView(false);
+            }
 
             Animation anim = new Animation() {
                 @Override
@@ -535,6 +538,10 @@ public class CollapsibleCalendar extends UICalendar {
 
             final int currentHeight = mScrollViewBody.getMeasuredHeight();
             final int targetHeight = mInitHeight;
+
+            if(mListener != null){
+                mListener.getCalendarView(true);
+            }
 
             Animation anim = new Animation() {
                 @Override
@@ -611,6 +618,8 @@ public class CollapsibleCalendar extends UICalendar {
 
         // triggered when the week position are changed.
         void onWeekChange(int position);
+
+        void getCalendarView(boolean isExpanded);
     }
 
     public void setExpandIconVisible(boolean visible){

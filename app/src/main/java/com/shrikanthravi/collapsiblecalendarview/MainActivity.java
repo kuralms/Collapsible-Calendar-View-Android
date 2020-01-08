@@ -4,6 +4,7 @@ import android.graphics.Color;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar;
 
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onWeekChange(int position) {
 
+            }
+
+            @Override
+            public void getCalendarView(boolean isExpanded) {
+                Toast.makeText(MainActivity.this,""+isExpanded,Toast.LENGTH_LONG).show();
             }
         });
 
